@@ -35,7 +35,15 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  for i in 0..arr.length()-2
+    for j in i+1..arr.length()-1
+      if arr[i] + arr[j] == n
+        return true
+        
+      end
+    end
+  end
+  return false
 end
 
 # Part 2
