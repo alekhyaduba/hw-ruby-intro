@@ -4,6 +4,8 @@
 
 def sum arr
   # YOUR CODE HERE
+  #new comment
+  
 end
 
 def max_2_sum arr
