@@ -1,7 +1,7 @@
 # When done, submit this entire file to the autograder.
 
 # Part 1
-
+FIXNUM_MIN =-(2**(0.size * 8 -2))
 def sum arr
   # YOUR CODE HERE
   result = 0
@@ -12,7 +12,26 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.length() == 0
+   return 0
+  elsif arr.length() == 1
+ return arr[0]
+  else
+   largest = FIXNUM_MIN
+   sec_largest = FIXNUM_MIN
+   for num in arr
+      if num > largest
+        sec_largest = largest
+        largest = num
+      elsif num > sec_largest
+      sec_largest = num
+      end
+       
+   end
+  result = largest + sec_largest
+  return result
+   
+  end
 end
 
 def sum_to_n? arr, n
