@@ -49,11 +49,24 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+   result = "Hello, " + name
+   result
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.length() == 0
+    return false
+  end
+  in_s = s.downcase
+  alphas = ('a'..'z').to_a
+  vowels = ["a","e","i","o","u"]
+  consonant = alphas - vowels
+  if consonant.include? in_s[0]
+    return true
+  else
+    return false
+  end
+  
 end
 
 def binary_multiple_of_4? s
