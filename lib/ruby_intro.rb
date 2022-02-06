@@ -70,16 +70,22 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
+  s = s.delete(" ")
   chars = s.split("")
   if chars.length() == 0
     return false
+  elsif chars.length() == 1 and chars[0] == "0"
+    return true
   end
   for x in chars
     if !"01 ".include? x
       return false
     end
   end
-  return true
+  if chars[-1] == "0" and chars[-2]=="0"
+    return true
+  end
+  return false
 end
 
 # Part 3
