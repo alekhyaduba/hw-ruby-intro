@@ -1,7 +1,7 @@
 # When done, submit this entire file to the autograder.
 
 # Part 1
-FIXNUM_MIN =-(2**(0.size * 8 -2))
+FIXNUM_MIN = -(2**(0.size * 8-2))
 def sum arr
   # YOUR CODE HERE
   result = 0
@@ -78,7 +78,7 @@ def binary_multiple_of_4? s
     return true
   end
   for x in chars
-    if !"01 ".include? x
+    if !"01".include? x
       return false
     end
   end
@@ -92,4 +92,19 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+  def initialize(isbn,price)
+    raise ArgumentError.new(
+    "ISBN value cannot be empty!"
+    ) if isbn.length == 0
+    raise ArgumentError.new(
+      "Price cannot be 0") if price <= 0
+    @isbn = isbn
+    @price = price
+  end
+  attr_accessor :isbn
+  attr_accessor :price
+  
+  def price_as_string()
+    "$%.2f" % [@price]
+  end
 end
